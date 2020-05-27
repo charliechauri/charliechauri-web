@@ -2,8 +2,9 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
 
+/** @todo Add coverage */
 test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const { getByAltText } = render(<App />);
+  const logo = getByAltText(/charliechauri's logo/i);
+  expect(logo).toBeInTheDocument();
 });
