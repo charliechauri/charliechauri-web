@@ -52,23 +52,4 @@ a {
     margin-bottom: $base-size * 1.5;
     max-width: 600px;
   }
-
-  &__social-networks {
-    &-heading {
-      font-family: 'Pixeled';
-      font-size: calc(10px + 1.2vmin);
-      margin-bottom: $base-size / 2;
-      text-transform: uppercase;
-    }
-
-    &-list {
-      display: flex;
-      flex-direction: row;
-      list-style: none;
-
-      &-item {
-        margin-right: $base-size;
-      }
-    }
-  }
 }

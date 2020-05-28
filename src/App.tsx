@@ -2,21 +2,7 @@ import React from 'react';
 import logo from 'img/logo.png';
 import './App.scss';
 
-/** @todo move to its own file */
-const socialNetworks = [
-  {
-    name: 'github',
-    href: ' https://github.com/charliechauri/',
-  },
-  {
-    name: 'linkedin',
-    href: 'https://www.linkedin.com/in/carlosechauri/',
-  },
-  {
-    name: 'twitter',
-    href: 'https://twitter.com/charliechauri/',
-  },
-];
+import SocialNetworks from 'SocialNetworks/SocialNetworks';
 
 function App() {
   return (
@@ -48,19 +34,7 @@ function App() {
         </p>
       </section>
 
-      {/* @todo create social networks component and children */}
-      <section className="app__social-networks">
-        <h2 className="app__social-networks-heading">Follow me</h2>
-        <ul className="app__social-networks-list">
-          {socialNetworks.map(({ href, name }) => (
-            <li key={name} className="app__social-networks-list-item">
-              <a href={href} target="_blank" rel="noopener noreferrer">
-                {name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <SocialNetworks />
     </div>
   );
 }

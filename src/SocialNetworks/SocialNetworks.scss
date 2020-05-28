@@ -1,0 +1,20 @@
+@import 'scss/variables';
+
+.social-networks {
+  &__heading {
+    font-family: 'Pixeled';
+    font-size: calc(10px + 1.2vmin);
+    margin-bottom: $base-size / 2;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+
+    &-item {
+      margin-right: $base-size;
+    }
+  }
+}
