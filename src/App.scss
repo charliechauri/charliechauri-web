@@ -7,13 +7,13 @@
 body {
   background-color: $color-light-yellow;
   color: $color-dark-blue;
-  font-family: 'Source Code Pro', monospace;
+  font-family: $font-family-primary;
 }
 
 mark {
   background-color: transparent;
   color: $color-dark-black;
-  font-family: 'Pixeled';
+  font-family: $font-family-secondary;
   font-size: calc(10px + 1.2vmin);
   text-transform: uppercase;
 }

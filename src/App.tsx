@@ -1,15 +1,20 @@
 import React from 'react';
 import logo from 'img/logo.png';
+import { useTranslation } from 'react-i18next';
 import './App.scss';
 
-import SocialNetworks from 'SocialNetworks/SocialNetworks';
-import Description from 'Description/Description';
+import LanguageSwitcher from 'components/LanguageSwitcher/LanguageSwitcher';
+import SocialNetworks from 'components/SocialNetworks/SocialNetworks';
+import Description from 'components/Description/Description';
 
 function App() {
+  const { t } = useTranslation();
+
   return (
     <div className="app">
       <header className="header">
-        <h1 className="screen-reader-only">charliechauri software engineer</h1>
+        {/* @todo create heading component */}
+        <h1 className="screen-reader-only">{t('main_heading')}</h1>
 
         {/* @todo create logo component */}
         <a
@@ -18,17 +23,12 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
-            src={logo}
-            className="app__logo-img"
-            alt="charliechauri's logo"
-          />
+          <img src={logo} className="app__logo-img" alt={t('logo_alt_text')} />
         </a>
       </header>
-
       <Description />
-
       <SocialNetworks />
+      <LanguageSwitcher />
     </div>
   );
 }

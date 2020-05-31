@@ -30,6 +30,7 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.2",
     "husky": "^4.2.5",
+    "i18next": "^19.4.5",
     "lint-staged": "^10.2.4",
     "node-sass": "^4.14.1",
     "prettier": "^2.0.5",
@@ -37,6 +38,7 @@
     "prettier-eslint-cli": "^5.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-i18next": "^11.5.0",
     "react-scripts": "3.4.1",
     "typescript": "~3.7.2"
   },
@@ -93,7 +95,8 @@
       "!src/serviceWorker.ts",
       "!src/react-app-env.d.ts",
       "!<rootDir>/node_modules/",
-      "!<rootDir>/path/to/dir/"
+      "!<rootDir>/path/to/dir/",
+      "!src/i18n.tsx"
     ],
     "coverageThreshold": {
       "global": {
