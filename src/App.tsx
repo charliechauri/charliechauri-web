@@ -3,6 +3,7 @@ import logo from 'img/logo.png';
 import './App.scss';
 
 import SocialNetworks from 'SocialNetworks/SocialNetworks';
+import Description from 'Description/Description';
 
 function App() {
   return (
@@ -25,14 +26,7 @@ function App() {
         </a>
       </header>
 
-      {/* @todo create description component */}
-      <section className="app__description">
-        <p>
-          I'm a <mark>Software Engineer</mark> with experience in different
-          industries (travel technology, human resources, legal services and
-          energy) with global projects and remote teams.
-        </p>
-      </section>
+      <Description />
 
       <SocialNetworks />
     </div>
