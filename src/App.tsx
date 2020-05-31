@@ -12,7 +12,6 @@ function App() {
 
   return (
     <div className="app">
-      <LanguageSwitcher />
       <header className="header">
         {/* @todo create heading component */}
         <h1 className="screen-reader-only">{t('main_heading')}</h1>
@@ -29,6 +28,7 @@ function App() {
       </header>
       <Description />
       <SocialNetworks />
+      <LanguageSwitcher />
     </div>
   );
 }
