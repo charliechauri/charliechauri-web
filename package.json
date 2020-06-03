@@ -40,10 +40,12 @@
     "react-dom": "^16.13.1",
     "react-i18next": "^11.5.0",
     "react-scripts": "3.4.1",
+    "source-map-explorer": "^2.4.2",
     "typescript": "~3.7.2"
   },
   "scripts": {
     "start": "react-scripts start",
+    "postbuild": "yarn analyze --tsv",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:nowatch": "CI=true react-scripts test --env=jsdom --coverage --color",
@@ -51,7 +53,8 @@
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
     "lint:autofix": "eslint --ext .js,.jsx,.ts,.tsx src --color --fix",
     "format:prettier": "prettier --write src/**/*.{ts,tsx,scss}",
-    "pre-pull-request": "yarn test:nowatch && yarn build"
+    "pre-pull-request": "yarn test:nowatch && yarn build",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "eslintConfig": {
     "extends": "react-app"
