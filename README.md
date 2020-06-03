@@ -1,5 +1,7 @@
 # charliechauri web site
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a12d3492-267e-4d6c-953d-f65d5bc5ec56/deploy-status)](https://app.netlify.com/sites/charliechauri/deploys)
+
 ## Description
 
 There are two objectives for this project:
