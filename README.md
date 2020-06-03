@@ -1,14 +1,21 @@
-# {Your project's title}
+# charliechauri web site
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a12d3492-267e-4d6c-953d-f65d5bc5ec56/deploy-status)](https://app.netlify.com/sites/charliechauri/deploys)
 
 ## Description
 
-{Add project description}
+There are two objectives for this project:
+
+1. Be reference about some practices or things should be considered when developing a react application (and many other frontend applications) like: unit testing, internationalization, code structure, coverage, commit conventions, git hooks, linting, formatting, and more topics to be added.
+2. Be an entry point when someone looks for charliechauri in the web 👨🏾‍💻
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Before starting
+This is based on [cra-extended](https://github.com/charliechauri/cra-extended), an initial boiler plate to have more features ootb.
 
-The aim of this repo is to serve as a starter point for a single page application using React with all common scripts for local development available out of the box (linter, formatter, commits style checker, test runner).
+![charliechauri](./charliechauri.gif)
+
+## Before starting
 
 This project is opinionated in the way code should be written in order to prevent errors, styling issues and to have consistency in the code base.
 
