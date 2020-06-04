@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        <Heading locKey="main_heading" screenReaderOnly={true} />
+        <Heading locKey="main_heading" />
 
         <Logo href="https://www.linkedin.com/in/carlosechauri" />
       </header>

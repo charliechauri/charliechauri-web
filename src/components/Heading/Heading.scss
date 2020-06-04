@@ -1,7 +1,5 @@
 @import 'scss/utility';
 
 .heading {
-  &--screen-reader-only {
-    @extend %screen-reader-only;
-  }
+  @extend %screen-reader-only;
 }
