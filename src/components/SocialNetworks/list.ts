@@ -15,4 +15,8 @@ export const socialNetworks = [
     name: 'twitter',
     href: 'https://twitter.com/charliechauri/',
   },
+  {
+    name: 'instagram',
+    href: 'https://instagram.com/charliechauri',
+  },
 ];
