@@ -1,8 +1,7 @@
-import React, { FunctionComponent, FormEvent } from 'react';
+import React, { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
 import LOCALES from 'locales/locales';
-
-import './LanguageSwitcher.scss';
+import Select from 'components/Select/Select';
 
 export interface LanguageSwitcherProps {}
 
@@ -10,25 +9,23 @@ const LanguageSwitcher: FunctionComponent<LanguageSwitcherProps> = () => {
   const { t, i18n } = useTranslation();
   const { language } = i18n;
 
-  const handleLanguageChange = (event: FormEvent<HTMLSelectElement>) => {
-    const { value: newLanguage } = event.currentTarget;
-
+  const handleLanguageChange = (newLanguage: string) => {
     i18n.changeLanguage(newLanguage);
   };
 
+  const languages = LOCALES.map(({ code, name }) => ({
+    value: code,
+    displayValue: name,
+  }));
+
   return (
-    <select
+    <Select
+      className="language-switcher"
+      ariaLabel={t('language_switcher_indications')}
+      initialValue={language}
+      options={languages}
       onChange={handleLanguageChange}
-      value={language}
-      className="custom-select"
-      aria-label={t('language_switcher_indications')}
-    >
-      {LOCALES.map(({ code, name }) => (
-        <option key={code} value={code}>
-          {name}
-        </option>
-      ))}
-    </select>
+    />
   );
 };
 
