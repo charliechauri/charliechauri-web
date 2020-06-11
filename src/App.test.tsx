@@ -11,7 +11,9 @@ test('renders learn react link', () => {
     </I18nTestWrapper>
   );
   const logo = getByAltText(/charliechauri's logo/i);
-  const languageSwitcher = getByLabelText('language_switcher_indications');
+  const languageSwitcher = getByLabelText(
+    'Select an option to change language'
+  );
 
   fireEvent.change(languageSwitcher, { value: 'es' });
 
