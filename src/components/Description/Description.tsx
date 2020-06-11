@@ -9,7 +9,7 @@ const Description: FunctionComponent<DescriptionProps> = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="description">
+    <section className="description" data-testid="description">
       <p>{t('description')}</p>
     </section>
   );
