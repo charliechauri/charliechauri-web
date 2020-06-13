@@ -19,6 +19,7 @@ const getEllipsis = (count: number): string => {
   return ellipsis;
 };
 
+/* istanbul ignore next */
 const useEllipsis = () => {
   const INTERVAL = 1000;
   const [ellipsisCount, setEllipsis] = useState<number>(1);
