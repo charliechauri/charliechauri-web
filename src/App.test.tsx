@@ -1,21 +1,22 @@
 import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
 import { I18nTestWrapper } from 'test/utils';
-import { render, fireEvent } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import App from './App';
 
-/** @todo Add coverage */
-test('renders learn react link', () => {
-  const { getByAltText, getByLabelText } = render(
-    <I18nTestWrapper>
-      <App />
-    </I18nTestWrapper>
-  );
-  const logo = getByAltText(/charliechauri's logo/i);
-  const languageSwitcher = getByLabelText(
-    'Select an option to change language'
+/** @todo Increase coverage */
+it('should render', async () => {
+  const { getByAltText, getByLabelText, getByTestId } = render(
+    <MemoryRouter initialEntries={['/']}>
+      <I18nTestWrapper>
+        <App />
+      </I18nTestWrapper>
+    </MemoryRouter>
   );
 
-  fireEvent.change(languageSwitcher, { value: 'es' });
+  const loading = getByTestId('loading-content');
+  await waitFor(() => expect(loading).not.toBeInTheDocument());
 
-  expect(logo).toBeInTheDocument();
+  getByAltText(/charliechauri's logo/i);
+  getByLabelText('Select an option to change language');
 });

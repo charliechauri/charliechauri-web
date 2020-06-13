@@ -1,24 +1,23 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import Loading from 'components/Loading/Loading';
+
 import './App.scss';
 
-import Heading from 'components/Heading/Heading';
-import Logo from 'components/Logo/Logo';
-import LanguageSwitcher from 'components/LanguageSwitcher/LanguageSwitcher';
-import SocialNetworks from 'components/SocialNetworks/SocialNetworks';
-import Description from 'components/Description/Description';
+const Home = lazy(() => import('pages/Home'));
 
 function App() {
   return (
-    <div className="app">
-      <header className="header">
-        <Heading locKey="main_heading" />
-
-        <Logo href="https://www.linkedin.com/in/carlosechauri" />
-      </header>
-      <Description />
-      <SocialNetworks />
-      <LanguageSwitcher />
-    </div>
+    <Router>
+      <Suspense fallback={<Loading />}>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Suspense>
+    </Router>
   );
 }
 
