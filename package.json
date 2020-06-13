@@ -102,7 +102,8 @@
       "!src/react-app-env.d.ts",
       "!<rootDir>/node_modules/",
       "!<rootDir>/path/to/dir/",
-      "!src/i18n.tsx"
+      "!src/i18n.tsx",
+      "!src/test/*"
     ],
     "coverageThreshold": {
       "global": {
