@@ -12,7 +12,8 @@
         "--no-cache",
         "--watchAll=false",
         "${relativeFile}",
-        "--colors"
+        "--colors",
+        "--env=jest-environment-jsdom-sixteen"
       ],
       "cwd": "${workspaceRoot}",
       "protocol": "inspector",
