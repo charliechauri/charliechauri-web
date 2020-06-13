@@ -1,4 +1,5 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 
 const TestHook = ({ callback }: { callback: () => void }) => {
   callback();
@@ -6,6 +7,5 @@ const TestHook = ({ callback }: { callback: () => void }) => {
   return null;
 };
 
-export const testHook = (callback: () => void) => (
-  <TestHook callback={callback} />
-);
+export const testHook = (callback: () => void) =>
+  render(<TestHook callback={callback} />);
