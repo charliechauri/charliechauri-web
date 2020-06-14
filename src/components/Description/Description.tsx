@@ -1,11 +1,11 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import './Description.scss';
 
 export interface DescriptionProps {}
 
-const Description: FunctionComponent<DescriptionProps> = () => {
+const Description: FC<DescriptionProps> = () => {
   const { t } = useTranslation();
 
   return (

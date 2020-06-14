@@ -1,11 +1,11 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import LOCALES from 'locales/locales';
 import Select from 'components/Select/Select';
 
 export interface LanguageSwitcherProps {}
 
-const LanguageSwitcher: FunctionComponent<LanguageSwitcherProps> = () => {
+const LanguageSwitcher: FC<LanguageSwitcherProps> = () => {
   const { t, i18n } = useTranslation();
   const { language } = i18n;
 

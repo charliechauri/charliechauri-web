@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import './SocialNetworks.scss';
@@ -6,7 +6,7 @@ import { socialNetworks } from './list';
 
 export interface SocialNetworksProps {}
 
-const SocialNetworks: FunctionComponent<SocialNetworksProps> = () => {
+const SocialNetworks: FC<SocialNetworksProps> = () => {
   const { t } = useTranslation();
 
   return (
