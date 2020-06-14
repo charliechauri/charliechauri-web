@@ -18,24 +18,18 @@ mark {
   text-transform: uppercase;
 }
 
-a {
-  color: $color-dark-purple;
-  transition: all ease-in 0.1s;
-
-  &:hover {
-    background-color: $color-dark-purple;
-    color: $color-light-white;
-  }
-}
-
 .app {
+  font-family: $font-family-primary;
   align-items: center;
   display: flex;
   flex-direction: column;
   font-size: calc(10px + 1.7vmin);
-  justify-content: flex-start;
   padding-top: $base-size * 3;
   padding-left: $base-size * 3;
   padding-right: $base-size * 3;
   text-align: center;
+
+  &--dark {
+    color: $color-light-white;
+  }
 }

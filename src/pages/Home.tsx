@@ -2,13 +2,12 @@ import React from 'react';
 
 import Heading from 'components/Heading/Heading';
 import Logo from 'components/Logo/Logo';
-import LanguageSwitcher from 'components/LanguageSwitcher/LanguageSwitcher';
 import SocialNetworks from 'components/SocialNetworks/SocialNetworks';
 import Description from 'components/Description/Description';
 
 export default function Home() {
   return (
-    <div className="app">
+    <div className="home">
       <header className="header">
         <Heading locKey="main_heading" />
 
@@ -16,7 +15,6 @@ export default function Home() {
       </header>
       <Description />
       <SocialNetworks />
-      <LanguageSwitcher />
     </div>
   );
 }

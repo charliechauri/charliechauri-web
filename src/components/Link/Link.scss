@@ -1,0 +1,15 @@
+@import 'scss/palette';
+
+a.link {
+  color: $color-dark-purple;
+  transition: all ease-in 0.1s;
+
+  &:hover {
+    background-color: $color-dark-purple;
+    color: $color-light-white;
+  }
+
+  &--dark {
+    color: $color-light-fuchsia;
+  }
+}

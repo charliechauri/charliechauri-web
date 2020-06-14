@@ -5,6 +5,9 @@
     "description": "Hola! Soy un Software Engineer con experiencia en diferentes industrias (viajes, recursos humanos, servicios legales y sector energético) en proyectos globales y equipos remotos",
     "social_networks_heading": "Sígueme",
     "language_switcher_indications": "Selecciona una opción para cambiar de lenguaje",
+    "theme_selector_label": "Selecciona un tema",
+    "theme_selector_light": "Luminoso",
+    "theme_selector_dark": "Oscuro",
     "loading": "Cargando"
   }
 }
