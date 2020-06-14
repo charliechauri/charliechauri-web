@@ -2,7 +2,6 @@ import React from 'react';
 
 import Heading from 'components/Heading/Heading';
 import Logo from 'components/Logo/Logo';
-import LanguageSwitcher from 'components/LanguageSwitcher/LanguageSwitcher';
 import SocialNetworks from 'components/SocialNetworks/SocialNetworks';
 import Description from 'components/Description/Description';
 
@@ -16,7 +15,6 @@ export default function Home() {
       </header>
       <Description />
       <SocialNetworks />
-      <LanguageSwitcher />
     </div>
   );
 }
