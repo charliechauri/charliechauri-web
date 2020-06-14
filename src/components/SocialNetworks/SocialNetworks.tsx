@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import Link, { TargetTypes } from 'components/Link/Link';
+
 import './SocialNetworks.scss';
 import { socialNetworks } from './list';
 
@@ -17,9 +19,9 @@ const SocialNetworks: FC<SocialNetworksProps> = () => {
       <ul className="social-networks__list">
         {socialNetworks.map(({ href, name }) => (
           <li key={name} className="social-networks__list-item">
-            <a href={href} target="_blank" rel="noopener noreferrer">
+            <Link href={href} target={TargetTypes.BLANK}>
               {name}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
