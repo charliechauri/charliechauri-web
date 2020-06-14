@@ -1,4 +1,4 @@
-import React, { FunctionComponent, FormEvent, useState } from 'react';
+import React, { FC, FormEvent, useState } from 'react';
 
 import SelectOption, {
   SelectOptionProps as SelectOptionPropsDefinition,
@@ -14,7 +14,7 @@ export interface SelectProps {
   onChange?: (newValue: string) => void;
 }
 
-const Select: FunctionComponent<SelectProps> = ({
+const Select: FC<SelectProps> = ({
   className,
   initialValue,
   options,

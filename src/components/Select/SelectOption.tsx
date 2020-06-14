@@ -1,13 +1,12 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 
 export interface SelectOptionProps {
   value: string;
   displayValue: string;
 }
 
-const SelectOption: FunctionComponent<SelectOptionProps> = ({
-  value,
-  displayValue,
-}) => <option value={value}>{displayValue}</option>;
+const SelectOption: FC<SelectOptionProps> = ({ value, displayValue }) => (
+  <option value={value}>{displayValue}</option>
+);
 
 export default SelectOption;

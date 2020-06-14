@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import './Logo.scss';
@@ -8,7 +8,7 @@ export interface LogoProps {
   href: string;
 }
 
-const Logo: FunctionComponent<LogoProps> = ({ href }) => {
+const Logo: FC<LogoProps> = ({ href }) => {
   const { t } = useTranslation();
 
   return (

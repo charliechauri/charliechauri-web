@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import './Heading.scss';
@@ -7,7 +7,7 @@ export interface HeadingProps {
   locKey: string;
 }
 
-const Heading: FunctionComponent<HeadingProps> = ({ locKey }) => {
+const Heading: FC<HeadingProps> = ({ locKey }) => {
   const { t } = useTranslation();
 
   return <h1 className="heading">{t(locKey)}</h1>;
