@@ -19,6 +19,7 @@ export enum Palette {
   black = '#000000',
 }
 
+/* istanbul ignore next */
 const ThemeContext = React.createContext({
   theme: Themes.LIGHT,
   setTheme: (theme: Themes) => {},
