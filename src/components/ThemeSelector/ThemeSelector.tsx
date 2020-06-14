@@ -1,20 +1,29 @@
 import React, { FC } from 'react';
 import Select, { SelectOptionProps } from 'components/Select/Select';
 import ThemeContext, { Themes } from 'ThemeContext';
+import { useTranslation } from 'react-i18next';
 
 export interface ThemeSelectorProps {}
 
 const ThemeSelector: FC<ThemeSelectorProps> = () => {
+  const { t } = useTranslation();
+
   const options: SelectOptionProps[] = [
-    { displayValue: 'LIGHT', value: Themes.LIGHT } /* @todo Add locale */,
-    { displayValue: 'DARK', value: Themes.DARK } /* @todo Add locale */,
+    {
+      displayValue: t('theme_selector_light'),
+      value: Themes.LIGHT,
+    },
+    {
+      displayValue: t('theme_selector_dark'),
+      value: Themes.DARK,
+    },
   ];
 
   return (
     <ThemeContext.Consumer>
       {(context) => (
         <Select
-          ariaLabel="Theme selector" /* @todo Add locale */
+          ariaLabel={t('theme_selector_label')}
           className="theme-selector"
           initialValue={context.theme}
           options={options}
