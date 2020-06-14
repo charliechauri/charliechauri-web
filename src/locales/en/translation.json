@@ -5,6 +5,9 @@
     "description": "I'm a Software Engineer with experience in different industries (travel technology, human resources, legal services and energy) with global projects and remote teams.",
     "social_networks_heading": "Follow me",
     "language_switcher_indications": "Select an option to change language",
+    "theme_selector_label": "Select a theme",
+    "theme_selector_light": "Light",
+    "theme_selector_dark": "Dark",
     "loading": "Loading"
   }
 }
