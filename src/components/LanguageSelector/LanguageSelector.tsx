@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 import LOCALES from 'locales/locales';
 import Select from 'components/Select/Select';
 
-export interface LanguageSwitcherProps {}
+export interface LanguageSelectorProps {}
 
-const LanguageSwitcher: FC<LanguageSwitcherProps> = () => {
+const LanguageSelector: FC<LanguageSelectorProps> = () => {
   const { t, i18n } = useTranslation();
   const { language } = i18n;
 
@@ -29,4 +29,4 @@ const LanguageSwitcher: FC<LanguageSwitcherProps> = () => {
   );
 };
 
-export default LanguageSwitcher;
+export default LanguageSelector;
