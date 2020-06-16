@@ -34,18 +34,17 @@ describe('renders learn react link', () => {
     const firstOption = getByText('1st');
 
     expect(select).toBeInTheDocument();
+    expect(select.value).toBe('first');
     expect(firstOption).toBeInTheDocument();
 
-    fireEvent.change(select, { value: 'second' });
-
+    fireEvent.change(select, { target: { value: 'second' } });
     const secondOption = getByText('2nd');
-
     expect(secondOption).toBeInTheDocument();
+    expect(select.value).toBe('second');
 
-    fireEvent.change(select, { value: 'third' });
-
+    fireEvent.change(select, { target: { value: 'third' } });
     const thirdOption = getByText('3rd');
-
     expect(thirdOption).toBeInTheDocument();
+    expect(select.value).toBe('third');
   });
 });

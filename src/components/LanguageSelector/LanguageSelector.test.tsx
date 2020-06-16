@@ -22,8 +22,9 @@ describe('Heading', () => {
     expect(languageSelector).toBeInTheDocument();
     expect(languageSelector.value).toBe('en');
 
-    fireEvent.change(languageSelector, { value: 'es' });
+    fireEvent.change(languageSelector, { target: { value: 'es' } });
 
     expect(getByText(/Español/i)).toBeVisible();
+    expect(languageSelector.value).toBe('es');
   });
 });
