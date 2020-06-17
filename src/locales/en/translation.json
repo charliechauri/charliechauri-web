@@ -8,6 +8,10 @@
     "theme_selector_label": "Select a theme",
     "theme_selector_light": "Light",
     "theme_selector_dark": "Dark",
-    "loading": "Loading"
+    "loading": "Loading",
+    "error_heading": "Ooops",
+    "error_message": "Something went wrong, please reload the page",
+    "error_emoji_description": "Dissapointed face",
+    "error_button": "Reload page"
   }
 }

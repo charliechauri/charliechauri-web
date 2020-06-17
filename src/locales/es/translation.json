@@ -8,6 +8,10 @@
     "theme_selector_label": "Selecciona un tema",
     "theme_selector_light": "Luminoso",
     "theme_selector_dark": "Oscuro",
-    "loading": "Cargando"
+    "loading": "Cargando",
+    "error_heading": "Ooops",
+    "error_message": "Algo salió mal, por favor recarga la página",
+    "error_emoji_description": "Carita de decepción",
+    "error_button": "Recargar página"
   }
 }
