@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import Link, { TargetTypes } from 'components/Link/Link';
 
-export interface ErrorBoundaryProps {}
+import { withTranslation, WithTranslation } from 'react-i18next';
+
+import Link, { TargetTypes } from 'components/Link/Link';
+import Heading, { Levels } from 'components/Heading/Heading';
+
+export interface ErrorBoundaryProps extends WithTranslation {}
 
 export interface ErrorBoundaryState {
   hasError: boolean;
@@ -21,23 +25,27 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
       return this.props.children;
     }
 
+    const { t } = this.props;
+    const emojiDescription = t('error_emoji_description');
+    const errorMessage = t('error_message');
+    const errorButtonMessage = t('error_button');
+
     return (
       <section>
-        <h1>Error</h1>
+        <Heading level={Levels.ONE} locKey="error_heading" />
+        <p>{errorMessage}</p>
         <p>
-          Something went wrong{' '}
-          <span role="img" aria-label="disappointed face">
+          <span role="img" aria-label={emojiDescription}>
             😕
           </span>
-          , please reload page
         </p>
 
         <Link href="#" target={TargetTypes.SELF}>
-          Reload!
+          {errorButtonMessage}
         </Link>
       </section>
     );
   }
 }
 
-export default ErrorBoundary;
+export default withTranslation()(ErrorBoundary);
