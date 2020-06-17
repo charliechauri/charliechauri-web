@@ -1,5 +1,31 @@
 @import 'scss/utility';
+@import 'scss/variables';
 
-.heading {
-  @extend %screen-reader-only;
+@mixin heading($font-size, $text-transform) {
+  &.heading {
+    font-family: 'Pixeled';
+    font-size: $font-size;
+    margin-bottom: $font-size / 2;
+    text-transform: $text-transform;
+
+    &--sr-only {
+      @extend %screen-reader-only;
+    }
+  }
+}
+
+h1 {
+  @include heading($base-size * 2, capitalize);
+  font-weight: bold;
+}
+
+h2 {
+  @include heading($base-size * 1.5, uppercase);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h3 {
+  @include heading($base-size * 1, uppercase);
+  font-weight: bold;
 }
