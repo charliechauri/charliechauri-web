@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
+import Heading, { Levels } from 'components/Heading/Heading';
 import Link, { TargetTypes } from 'components/Link/Link';
 
 import './SocialNetworks.scss';
@@ -9,13 +9,10 @@ import { socialNetworks } from './list';
 export interface SocialNetworksProps {}
 
 const SocialNetworks: FC<SocialNetworksProps> = () => {
-  const { t } = useTranslation();
-
   return (
     <section className="social-networks">
-      <h2 className="social-networks__heading">
-        {t('social_networks_heading')}
-      </h2>
+      <Heading level={Levels.TWO} locKey="social_networks_heading" />
+
       <ul className="social-networks__list">
         {socialNetworks.map(({ href, name }) => (
           <li key={name} className="social-networks__list-item">
