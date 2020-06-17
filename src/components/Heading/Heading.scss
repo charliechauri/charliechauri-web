@@ -1,5 +1,28 @@
 @import 'scss/utility';
+@import 'scss/variables';
 
-.heading {
-  @extend %screen-reader-only;
+@mixin heading($font-size) {
+  &.heading {
+    font-size: $font-size;
+    text-transform: capitalize;
+
+    &--sr-only {
+      @extend %screen-reader-only;
+    }
+  }
+}
+
+h1 {
+  @include heading($base-size * 2);
+  font-weight: bold;
+}
+
+h2 {
+  @include heading($base-size * 1.5);
+  font-weight: bold;
+}
+
+h3 {
+  @include heading($base-size * 1);
+  font-weight: bold;
 }
