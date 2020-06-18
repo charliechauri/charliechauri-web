@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ThemeContext, { Themes, Palette } from 'ThemeContext';
 import GlobalSelectors from 'components/GlobalSelectors/GlobalSelectors';
 import Loading from 'components/Loading/Loading';
-import ErrorBoundary from './ErrorBoundary';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
 import './App.scss';
 
