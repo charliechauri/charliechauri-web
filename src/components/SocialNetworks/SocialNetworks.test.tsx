@@ -32,6 +32,7 @@ describe('SocialNetworks', () => {
 
     links.forEach((link) => {
       expect(link.target).toBe('_blank');
+      expect(link.rel).toBe('noopener noreferrer');
     });
   });
 });
