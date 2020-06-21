@@ -20,6 +20,7 @@ describe('SocialNetworks', () => {
     const linkedinLink = getByText('linkedin') as HTMLAnchorElement;
     const twitterLink = getByText('twitter') as HTMLAnchorElement;
     const instagramLink = getByText('instagram') as HTMLAnchorElement;
+    const links = [githubLink, linkedinLink, twitterLink, instagramLink];
 
     expect(heading.tagName).toBe('H2');
     expect(githubLink.href).toBe('https://github.com/charliechauri/');
@@ -28,5 +29,9 @@ describe('SocialNetworks', () => {
     );
     expect(twitterLink.href).toBe('https://twitter.com/charliechauri/');
     expect(instagramLink.href).toBe('https://instagram.com/charliechauri');
+
+    links.forEach((link) => {
+      expect(link.target).toBe('_blank');
+    });
   });
 });
