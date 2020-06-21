@@ -5,7 +5,7 @@ interface socialNetworks {
 export const socialNetworks = [
   {
     name: 'github',
-    href: ' https://github.com/charliechauri/',
+    href: 'https://github.com/charliechauri/',
   },
   {
     name: 'linkedin',
