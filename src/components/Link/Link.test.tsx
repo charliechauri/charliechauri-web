@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import ThemeTestWrapper from 'test/ThemeTestWrapper';
+import { ThemeTestWrapper } from 'test/utils';
 import Link, { TargetTypes } from './Link';
 
 describe('Link', () => {
