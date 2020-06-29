@@ -1,15 +1,15 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { I18nTestWrapper } from 'test/utils';
+import { I18nProvider } from 'test/Providers';
 
 import SocialNetworks from './SocialNetworks';
 
 describe('SocialNetworks', () => {
   const renderComponent = () =>
     render(
-      <I18nTestWrapper>
+      <I18nProvider>
         <SocialNetworks />
-      </I18nTestWrapper>
+      </I18nProvider>
     );
 
   it('should render title and list of social networks', () => {

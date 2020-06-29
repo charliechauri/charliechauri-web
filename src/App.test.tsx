@@ -1,6 +1,6 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { I18nTestWrapper } from 'test/utils';
+import { I18nProvider } from 'test/Providers';
 import { render, waitFor, fireEvent } from '@testing-library/react';
 import App from './App';
 
@@ -9,9 +9,9 @@ describe('App', () => {
   it('should render', async () => {
     const { getByAltText, getByLabelText, getByTestId, getByText } = render(
       <MemoryRouter initialEntries={['/']}>
-        <I18nTestWrapper>
+        <I18nProvider>
           <App />
-        </I18nTestWrapper>
+        </I18nProvider>
       </MemoryRouter>
     );
 
