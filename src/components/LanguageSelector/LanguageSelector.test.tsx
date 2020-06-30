@@ -1,14 +1,14 @@
 import React from 'react';
-import { I18nTestWrapper } from 'test/utils';
+import { I18nProvider } from 'test/Providers';
 import { render, fireEvent } from '@testing-library/react';
 import LanguageSelector from './LanguageSelector';
 
 describe('Heading', () => {
   const renderComponent = () =>
     render(
-      <I18nTestWrapper>
+      <I18nProvider>
         <LanguageSelector />
-      </I18nTestWrapper>
+      </I18nProvider>
     );
 
   it('should render when valid locKey is set', async () => {

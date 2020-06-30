@@ -1,14 +1,14 @@
 import React from 'react';
-import { I18nTestWrapper } from 'test/utils';
+import { I18nProvider } from 'test/Providers';
 import { render } from '@testing-library/react';
 import Logo from './Logo';
 
 describe('Logo', () => {
   it('should render', () => {
     const { getByAltText } = render(
-      <I18nTestWrapper>
+      <I18nProvider>
         <Logo href="https://www.linkedin.com/in/carlosechauri" />
-      </I18nTestWrapper>
+      </I18nProvider>
     );
     const logo = getByAltText(/charliechauri's logo/i);
 

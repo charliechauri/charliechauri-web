@@ -1,16 +1,16 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { ThemeTestWrapper, I18nTestWrapper } from 'test/utils';
+import { ThemeProvider, I18nProvider } from 'test/Providers';
 import ThemeSelector from './ThemeSelector';
 
 describe('ThemeSelector', () => {
   const renderComponent = () =>
     render(
-      <I18nTestWrapper>
-        <ThemeTestWrapper>
+      <I18nProvider>
+        <ThemeProvider>
           <ThemeSelector />
-        </ThemeTestWrapper>
-      </I18nTestWrapper>
+        </ThemeProvider>
+      </I18nProvider>
     );
 
   it('should render and change between available themes', () => {

@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import { render } from '@testing-library/react';
-import { I18nTestWrapper } from 'test/utils';
+import { I18nProvider } from 'test/Providers';
 
 import ErrorBoundary from './ErrorBoundary';
 
@@ -30,19 +30,19 @@ function ThrowError({ shouldThrow = false }) {
 
 test('should render error state when error is thrown in children components', () => {
   const { getByLabelText, getByText, rerender } = render(
-    <I18nTestWrapper>
+    <I18nProvider>
       <ErrorBoundary>
         <ThrowError />
       </ErrorBoundary>
-    </I18nTestWrapper>
+    </I18nProvider>
   );
 
   rerender(
-    <I18nTestWrapper>
+    <I18nProvider>
       <ErrorBoundary>
         <ThrowError shouldThrow={true} />
       </ErrorBoundary>
-    </I18nTestWrapper>
+    </I18nProvider>
   );
 
   expect.any(Error);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { I18nTestWrapper } from 'test/utils';
+import { I18nProvider } from 'test/Providers';
 import { render } from '@testing-library/react';
 import Heading, { Levels } from './Heading';
 
@@ -10,13 +10,13 @@ describe('Heading', () => {
     screenReaderOnly = false
   ) =>
     render(
-      <I18nTestWrapper>
+      <I18nProvider>
         <Heading
           level={level}
           locKey={locKey}
           screenReaderOnly={screenReaderOnly}
         />
-      </I18nTestWrapper>
+      </I18nProvider>
     );
 
   it('should render when valid locKey is set', () => {

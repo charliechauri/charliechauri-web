@@ -1,16 +1,16 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { ThemeTestWrapper } from 'test/utils';
+import { ThemeProvider } from 'test/Providers';
 import Link, { TargetTypes } from './Link';
 
 describe('Link', () => {
   it('should render, including default theme and custom css classes', () => {
     const { getByText } = render(
-      <ThemeTestWrapper>
+      <ThemeProvider>
         <Link href="#some-where" target={TargetTypes.BLANK} className="custom">
           Regular link
         </Link>
-      </ThemeTestWrapper>
+      </ThemeProvider>
     );
 
     const link = getByText('Regular link') as HTMLAnchorElement;

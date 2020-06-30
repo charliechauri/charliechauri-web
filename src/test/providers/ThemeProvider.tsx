@@ -1,13 +1,13 @@
 import React, { ReactChild, FC } from 'react';
 import ThemeContext, { Themes } from 'ThemeContext';
 
-export interface ThemeTestWrapperProps {
+export interface ThemeProviderProps {
   children: ReactChild;
   theme?: Themes;
   setTheme?: (theme: Themes) => void;
 }
 
-const ThemeTestWrapper: FC<ThemeTestWrapperProps> = ({
+const ThemeProvider: FC<ThemeProviderProps> = ({
   children,
   theme = Themes.LIGHT,
   setTheme = () => {},
@@ -21,4 +21,4 @@ const ThemeTestWrapper: FC<ThemeTestWrapperProps> = ({
   );
 };
 
-export default ThemeTestWrapper;
+export default ThemeProvider;
