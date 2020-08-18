@@ -3,4 +3,8 @@
 .description {
   margin-bottom: $base-size * 1.5;
   max-width: 600px;
+
+  p {
+    margin-bottom: $base-size * 1.5;
+  }
 }
