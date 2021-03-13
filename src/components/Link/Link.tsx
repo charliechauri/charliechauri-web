@@ -1,4 +1,4 @@
-import React, { FC, ReactChild, ReactChildren } from 'react';
+import React, { FC } from 'react';
 
 import ThemeContext from 'ThemeContext';
 
@@ -15,18 +15,17 @@ export interface LinkProps {
   href: string;
   target: TargetTypes;
   className?: string;
-  children: ReactChildren | ReactChild;
 }
 
 const Link: FC<LinkProps> = ({ href, target, children, className = '' }) => {
   return (
     <ThemeContext.Consumer>
-      {(context) => {
+      {({ theme }) => {
         return (
           <a
             target={target}
             href={href}
-            className={`link link--${context.theme} ${className}`}
+            className={`link link--${theme} ${className}`}
             rel="noopener noreferrer"
           >
             {children}

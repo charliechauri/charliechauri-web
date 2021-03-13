@@ -1,8 +1,7 @@
-import React, { ReactChild, FC } from 'react';
+import React, { FC } from 'react';
 import ThemeContext, { Themes } from 'ThemeContext';
 
 export interface ThemeProviderProps {
-  children: ReactChild;
   theme?: Themes;
   setTheme?: (theme: Themes) => void;
 }
