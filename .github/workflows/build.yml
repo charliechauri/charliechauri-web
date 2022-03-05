@@ -9,6 +9,8 @@ jobs:
     name: PR Checks
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout master
+        uses: actions/checkout@master
 
       - name: Read from .nvmrc
         run: echo ::set-output name=NVMRC::$(cat .nvmrc)
