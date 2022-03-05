@@ -12,8 +12,7 @@ jobs:
     steps:
       - uses: dcodeIO/setup-node-nvm@master
         with:
-          cmd: nvm install
-          cmd: nvm use
+          cmd: nvm install && nvm use
       - uses: actions/checkout@v2
       - uses: borales/actions-yarn@v2.3.0
         with:
