@@ -17,6 +17,16 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '${{ steps.nvm.outputs.NVMRC }}'
+          cache: 'yarn'
 
       - name: Install dependencies
         run: yarn install
+
+      - name: Run linter
+        run: yarn lint
+
+      - name: Run unit tests
+        run: yarn test:nowatch
+
+      - name: Build project
+        run: yarn build
