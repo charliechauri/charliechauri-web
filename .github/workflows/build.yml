@@ -21,7 +21,7 @@ jobs:
           node-version: '${{ steps.nvm.outputs.NVMRC }}'
 
       - name: Install dependencies
-        run: yarn install
+        run: echo node -v && yarn install
 
       - name: Run linter
         run: yarn lint
