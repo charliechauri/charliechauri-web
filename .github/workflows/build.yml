@@ -7,17 +7,19 @@ on:
     branches-ignore: main
 jobs:
   build:
+    name: Test
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm run test:nowatch
+      - uses: actions/checkout@v2
+      - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: install
+      - uses: borales/actions-yarn@2.3.0
+        with:
+          cmd: lint
+      - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: test:nowatch
+      - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: build
