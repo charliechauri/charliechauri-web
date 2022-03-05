@@ -10,6 +10,7 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+      - uses: dcodeIO/setup-node-nvm@master
       - uses: actions/checkout@v2
       - uses: borales/actions-yarn@v2.3.0
         with:
