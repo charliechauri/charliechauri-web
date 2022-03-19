@@ -1,5 +1,5 @@
 import { testHook } from 'test/TestHook';
-import useEllipsis from './useEllipsis';
+import { useEllipsis } from './useEllipsis';
 
 describe('useEllipsis', () => {
   jest.useFakeTimers();

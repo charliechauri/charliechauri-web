@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import LOCALES from 'locales/locales';
-import Select from 'components/Select/Select';
+import { Select } from 'components/Select/Select';
 
-export interface LanguageSelectorProps {}
+export type LanguageSelectorProps = {};
 
-const LanguageSelector: FC<LanguageSelectorProps> = () => {
+export const LanguageSelector: FC<LanguageSelectorProps> = () => {
   const { t, i18n } = useTranslation();
   const { language } = i18n;
 
@@ -28,5 +28,3 @@ const LanguageSelector: FC<LanguageSelectorProps> = () => {
     />
   );
 };
-
-export default LanguageSelector;

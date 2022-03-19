@@ -2,16 +2,19 @@ import React, { Component } from 'react';
 
 import { withTranslation, WithTranslation } from 'react-i18next';
 
-import Link, { TargetTypes } from 'components/Link/Link';
-import Heading, { Levels } from 'components/Heading/Heading';
+import { Link, TargetTypes } from 'components/Link/Link';
+import { Heading, Levels } from 'components/Heading/Heading';
 
 export interface ErrorBoundaryProps extends WithTranslation {}
 
-export interface ErrorBoundaryState {
+export type ErrorBoundaryState = {
   hasError: boolean;
-}
+};
 
-class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+export class _ErrorBoundary extends Component<
+  ErrorBoundaryProps,
+  ErrorBoundaryState
+> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
 
@@ -56,4 +59,4 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   }
 }
 
-export default withTranslation()(ErrorBoundary);
+export const ErrorBoundary = withTranslation()(_ErrorBoundary);

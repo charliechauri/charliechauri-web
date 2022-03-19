@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import Select, { SelectOptionProps } from './Select';
+import { Select } from './index';
 
 describe('renders learn react link', () => {
-  const options: SelectOptionProps[] = [
+  const options = [
     {
       value: 'first',
       displayValue: '1st',

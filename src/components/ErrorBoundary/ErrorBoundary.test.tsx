@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 import React from 'react';
 import { render } from '@testing-library/react';
-import { I18nProvider } from 'test/Providers';
+import { I18nProvider } from 'test/providers';
 
-import ErrorBoundary from './ErrorBoundary';
+import { ErrorBoundary } from './index';
 
 let consoleSpy: jest.SpyInstance<void, [any?, ...any[]]>; // eslint-disable-line @typescript-eslint/no-explicit-any
 

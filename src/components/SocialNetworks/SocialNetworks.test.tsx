@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { I18nProvider } from 'test/Providers';
+import { I18nProvider } from 'test/providers';
 
-import SocialNetworks from './SocialNetworks';
+import { SocialNetworks } from './index';
 
 describe('SocialNetworks', () => {
   const renderComponent = () =>

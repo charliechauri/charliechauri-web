@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 
 import './Description.scss';
 
-export interface DescriptionProps {}
+export type DescriptionProps = {};
 
-const Description: FC<DescriptionProps> = () => {
+export const Description: FC<DescriptionProps> = () => {
   const { t } = useTranslation();
 
   return (
@@ -15,5 +15,3 @@ const Description: FC<DescriptionProps> = () => {
     </section>
   );
 };
-
-export default Description;

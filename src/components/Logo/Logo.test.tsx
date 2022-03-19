@@ -1,7 +1,7 @@
 import React from 'react';
-import { I18nProvider } from 'test/Providers';
+import { I18nProvider } from 'test/providers';
 import { render } from '@testing-library/react';
-import Logo from './Logo';
+import { Logo } from './index';
 
 describe('Logo', () => {
   it('should render', () => {

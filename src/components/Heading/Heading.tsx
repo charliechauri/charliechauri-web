@@ -12,13 +12,13 @@ export enum Levels {
   THREE = '3',
 }
 
-export interface HeadingProps {
+export type HeadingProps = {
   level: Levels;
   locKey: string;
   screenReaderOnly?: boolean;
-}
+};
 
-const Heading: FC<HeadingProps> = ({
+export const Heading: FC<HeadingProps> = ({
   level,
   locKey,
   screenReaderOnly = false,
@@ -30,5 +30,3 @@ const Heading: FC<HeadingProps> = ({
 
   return createElement(heading, { className }, t(locKey));
 };
-
-export default Heading;

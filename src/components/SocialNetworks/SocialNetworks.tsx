@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
 
-import Heading, { Levels } from 'components/Heading/Heading';
-import Link, { TargetTypes } from 'components/Link/Link';
+import { Heading, Levels } from 'components/Heading';
+import { Link, TargetTypes } from 'components/Link';
 
 import './SocialNetworks.scss';
 import { socialNetworks } from './list';
 
-export interface SocialNetworksProps {}
+export type SocialNetworksProps = {};
 
-const SocialNetworks: FC<SocialNetworksProps> = () => {
+export const SocialNetworks: FC<SocialNetworksProps> = () => {
   return (
     <section className="social-networks">
       <Heading level={Levels.TWO} locKey="social_networks_heading" />
@@ -25,5 +25,3 @@ const SocialNetworks: FC<SocialNetworksProps> = () => {
     </section>
   );
 };
-
-export default SocialNetworks;

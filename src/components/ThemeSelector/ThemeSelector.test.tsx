@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { ThemeProvider, I18nProvider } from 'test/Providers';
-import ThemeSelector from './ThemeSelector';
+import { ThemeProvider, I18nProvider } from 'test/providers';
+import { ThemeSelector } from './index';
 
 describe('ThemeSelector', () => {
   const renderComponent = () =>

@@ -1,20 +1,18 @@
 import React, { FC, FormEvent, useState } from 'react';
 
-import SelectOption, {
-  SelectOptionProps as SelectOptionPropsDefinition,
-} from './SelectOption';
+import { SelectOption, SelectOptionProps } from './SelectOption';
 
 import './Select.scss';
 
-export interface SelectProps {
+export type SelectProps = {
   className: string;
   initialValue: string;
   options: SelectOptionProps[];
   ariaLabel: string;
   onChange?: (newValue: string) => void;
-}
+};
 
-const Select: FC<SelectProps> = ({
+export const Select: FC<SelectProps> = ({
   className,
   initialValue,
   options,
@@ -45,6 +43,3 @@ const Select: FC<SelectProps> = ({
     </select>
   );
 };
-
-export type SelectOptionProps = SelectOptionPropsDefinition;
-export default Select;
