@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Heading, { Levels } from 'components/Heading/Heading';
-import Logo from 'components/Logo/Logo';
-import SocialNetworks from 'components/SocialNetworks/SocialNetworks';
-import Description from 'components/Description/Description';
+import { Heading, Levels } from 'components/Heading';
+import { Logo } from 'components/Logo';
+import { SocialNetworks } from 'components/SocialNetworks';
+import { Description } from 'components/Description';
 
 export default function Home() {
   return (

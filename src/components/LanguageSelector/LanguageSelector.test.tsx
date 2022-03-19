@@ -1,7 +1,7 @@
 import React from 'react';
-import { I18nProvider } from 'test/Providers';
+import { I18nProvider } from 'test/providers';
 import { render, fireEvent } from '@testing-library/react';
-import LanguageSelector from './LanguageSelector';
+import { LanguageSelector } from './index';
 
 describe('Heading', () => {
   const renderComponent = () =>

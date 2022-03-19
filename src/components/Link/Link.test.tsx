@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { ThemeProvider } from 'test/Providers';
-import Link, { TargetTypes } from './Link';
+import { ThemeProvider } from 'test/providers';
+import { Link, TargetTypes } from './index';
 
 describe('Link', () => {
   it('should render, including default theme and custom css classes', () => {

@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
-import Select, { SelectOptionProps } from 'components/Select/Select';
-import ThemeContext, { Themes } from 'ThemeContext';
+import { Select } from 'components/Select';
+import { ThemeContext, Themes } from 'ThemeContext';
 import { useTranslation } from 'react-i18next';
 
-export interface ThemeSelectorProps {}
+export type ThemeSelectorProps = {};
 
-const ThemeSelector: FC<ThemeSelectorProps> = () => {
+export const ThemeSelector: FC<ThemeSelectorProps> = () => {
   const { t } = useTranslation();
 
-  const options: SelectOptionProps[] = [
+  const options = [
     {
       displayValue: t('theme_selector_light'),
       value: Themes.LIGHT,
@@ -35,5 +35,3 @@ const ThemeSelector: FC<ThemeSelectorProps> = () => {
     </ThemeContext.Consumer>
   );
 };
-
-export default ThemeSelector;

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import ThemeContext from 'ThemeContext';
+import { ThemeContext } from 'ThemeContext';
 
 import './Link.scss';
 
@@ -11,13 +11,18 @@ export enum TargetTypes {
   TOP = '_top',
 }
 
-export interface LinkProps {
+export type LinkProps = {
   href: string;
   target: TargetTypes;
   className?: string;
-}
+};
 
-const Link: FC<LinkProps> = ({ href, target, children, className = '' }) => {
+export const Link: FC<LinkProps> = ({
+  href,
+  target,
+  children,
+  className = '',
+}) => {
   return (
     <ThemeContext.Consumer>
       {({ theme }) => {
@@ -35,5 +40,3 @@ const Link: FC<LinkProps> = ({ href, target, children, className = '' }) => {
     </ThemeContext.Consumer>
   );
 };
-
-export default Link;

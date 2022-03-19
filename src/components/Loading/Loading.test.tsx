@@ -1,8 +1,8 @@
 import React from 'react';
-import { I18nProvider } from 'test/Providers';
+import { I18nProvider } from 'test/providers';
 import { render } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
-import Loading from './Loading';
+import { Loading } from './index';
 
 describe('Loading', () => {
   jest.useFakeTimers();

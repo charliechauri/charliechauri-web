@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import useEllipsis from './useEllipsis';
+import { useEllipsis } from './useEllipsis';
 
 import './Loading.scss';
 
-export interface LoadingProps {}
+export type LoadingProps = {};
 
-const Loading: FC<LoadingProps> = () => {
+export const Loading: FC<LoadingProps> = () => {
   const { t } = useTranslation();
   const ellipsis = useEllipsis();
 
@@ -19,5 +19,3 @@ const Loading: FC<LoadingProps> = () => {
     </section>
   );
 };
-
-export default Loading;

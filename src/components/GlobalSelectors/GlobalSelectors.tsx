@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 
-import LanguageSelector from 'components/LanguageSelector/LanguageSelector';
-import ThemeSelector from 'components/ThemeSelector/ThemeSelector';
+import { LanguageSelector } from 'components/LanguageSelector';
+import { ThemeSelector } from 'components/ThemeSelector';
 
 import './GlobalSelectors.scss';
 
-export interface GlobalSelectorsProps {}
+export type GlobalSelectorsProps = {};
 
-const GlobalSelectors: FC<GlobalSelectorsProps> = () => {
+export const GlobalSelectors: FC<GlobalSelectorsProps> = () => {
   return (
     <section className="global-selectors">
       <LanguageSelector />
@@ -15,5 +15,3 @@ const GlobalSelectors: FC<GlobalSelectorsProps> = () => {
     </section>
   );
 };
-
-export default GlobalSelectors;

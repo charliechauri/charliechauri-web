@@ -1,7 +1,7 @@
 import React from 'react';
-import { I18nProvider } from 'test/Providers';
+import { I18nProvider } from 'test/providers';
 import { render } from '@testing-library/react';
-import Description from './Description';
+import { Description } from './index';
 
 describe('Description', () => {
   const renderComponent = () =>

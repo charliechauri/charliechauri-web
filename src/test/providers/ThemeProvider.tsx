@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
-import ThemeContext, { Themes } from 'ThemeContext';
+import { ThemeContext, Themes } from 'ThemeContext';
 
 export interface ThemeProviderProps {
   theme?: Themes;
   setTheme?: (theme: Themes) => void;
 }
 
-const ThemeProvider: FC<ThemeProviderProps> = ({
+export const ThemeProvider: FC<ThemeProviderProps> = ({
   children,
   theme = Themes.LIGHT,
   setTheme = () => {},
@@ -19,5 +19,3 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
     </ThemeContext.Provider>
   );
 };
-
-export default ThemeProvider;

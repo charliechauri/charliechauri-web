@@ -1,8 +1,8 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { I18nProvider } from 'test/Providers';
+import { I18nProvider } from 'test/providers';
 import { render, waitFor, fireEvent } from '@testing-library/react';
-import App from './App';
+import { App } from './App';
 
 /** @todo Increase coverage */
 describe('App', () => {

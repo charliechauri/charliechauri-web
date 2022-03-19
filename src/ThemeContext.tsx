@@ -20,9 +20,7 @@ export enum Palette {
 }
 
 /* istanbul ignore next */
-const ThemeContext = React.createContext({
+export const ThemeContext = React.createContext({
   theme: Themes.LIGHT,
   setTheme: (theme: Themes) => {},
 });
-
-export default ThemeContext;
