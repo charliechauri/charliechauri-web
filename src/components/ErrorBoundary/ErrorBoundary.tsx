@@ -12,8 +12,8 @@ export type ErrorBoundaryState = {
 };
 
 export class _ErrorBoundary extends Component<
-  ErrorBoundaryProps,
-  ErrorBoundaryState
+ErrorBoundaryProps,
+ErrorBoundaryState
 > {
   constructor(props: ErrorBoundaryProps) {
     super(props);
