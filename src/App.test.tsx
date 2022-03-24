@@ -1,13 +1,18 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { I18nProvider } from 'test/providers';
-import { render, waitFor, fireEvent } from '@testing-library/react';
+import {
+  render,
+  fireEvent,
+  screen,
+  waitForElementToBeRemoved,
+} from '@testing-library/react';
 import { App } from './App';
 
 /** @todo Increase coverage */
 describe('App', () => {
   it('should render', async () => {
-    const { getByAltText, getByLabelText, getByTestId, getByText } = render(
+    render(
       <MemoryRouter initialEntries={['/']}>
         <I18nProvider>
           <App />
@@ -15,19 +20,24 @@ describe('App', () => {
       </MemoryRouter>
     );
 
-    const loading = getByTestId('loading-content');
-    await waitFor(() => expect(loading).not.toBeInTheDocument());
+    await waitForElementToBeRemoved(() =>
+      screen.queryByTestId('loading-content')
+    );
 
-    getByAltText(/charliechauri's logo/i);
-    getByLabelText('Select an option to change language');
-    const themeSelector = getByLabelText('Select a theme') as HTMLSelectElement;
+    expect(
+      screen.getByRole('img', { name: /charliechauri's logo/i })
+    ).toBeVisible();
+    expect(
+      screen.getByRole('combobox', {
+        name: 'Select an option to change language',
+      })
+    ).toBeVisible();
+    const themeSelector = screen.getByLabelText('Select a theme');
 
-    expect(themeSelector.value).toBe('light');
+    expect(themeSelector).toHaveValue('light');
 
     fireEvent.change(themeSelector, { target: { value: 'dark' } });
 
-    getByText('Dark');
-
-    expect(themeSelector.value).toBe('dark');
+    expect(themeSelector).toHaveValue('dark');
   });
 });
