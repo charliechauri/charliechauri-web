@@ -1,73 +1,70 @@
 import React from 'react';
 import { I18nProvider } from 'test/providers';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Heading, Levels } from './index';
 
 describe('Heading', () => {
-  const renderComponent = (
-    locKey: string,
-    level: Levels = Levels.ONE,
-    screenReaderOnly = false
-  ) =>
+  it('should render when valid locKey is set', () => {
     render(
       <I18nProvider>
-        <Heading
-          level={level}
-          locKey={locKey}
-          screenReaderOnly={screenReaderOnly}
-        />
+        <Heading locKey="main_heading" level={Levels.ONE} />
       </I18nProvider>
     );
+    const heading = screen.getByRole('heading', {
+      name: /charliechauri, software engineer/i,
+      level: 1,
+    });
 
-  it('should render when valid locKey is set', () => {
-    const { getByText } = renderComponent('main_heading');
-    const heading = getByText(/charliechauri, software engineer/i);
-
-    expect(heading).toBeInTheDocument();
-    expect(heading.tagName).toBe('H1');
-    expect(heading.className).toContain('heading');
     expect(heading).toBeVisible();
-  });
-
-  it("should render locKey when it's not defined", () => {
-    const { getByText } = renderComponent('invalid_loc_key');
-    const heading = getByText(/invalid_loc_key/i);
-
-    expect(heading).toBeInTheDocument();
+    expect(heading).toHaveAttribute('class', 'heading ');
     expect(heading).toBeVisible();
   });
 
   it('should render heading level 2', () => {
-    const { getByText } = renderComponent('main_heading', Levels.TWO);
-    const heading = getByText(/charliechauri, software engineer/i);
+    render(
+      <I18nProvider>
+        <Heading locKey="main_heading" level={Levels.TWO} />
+      </I18nProvider>
+    );
 
-    expect(heading).toBeInTheDocument();
-    expect(heading.tagName).toBe('H2');
-    expect(heading.className).toContain('heading');
+    const heading = screen.getByRole('heading', {
+      name: /charliechauri, software engineer/i,
+      level: 2,
+    });
+
     expect(heading).toBeVisible();
+    expect(heading).toHaveAttribute('class', 'heading ');
   });
 
   it('should render heading level 3', () => {
-    const { getByText } = renderComponent('main_heading', Levels.THREE);
-    const heading = getByText(/charliechauri, software engineer/i);
+    render(
+      <I18nProvider>
+        <Heading locKey="main_heading" level={Levels.THREE} />
+      </I18nProvider>
+    );
 
-    expect(heading).toBeInTheDocument();
-    expect(heading.tagName).toBe('H3');
-    expect(heading.className).toContain('heading');
+    const heading = screen.getByRole('heading', {
+      name: /charliechauri, software engineer/i,
+      level: 3,
+    });
+
     expect(heading).toBeVisible();
+    expect(heading).toHaveAttribute('class', 'heading ');
   });
 
   it('should render heading level 1 for screen reader only', () => {
-    const screenReaderOnly = true;
-    const { getByText } = renderComponent(
-      'main_heading',
-      Levels.ONE,
-      screenReaderOnly
+    render(
+      <I18nProvider>
+        <Heading locKey="main_heading" level={Levels.ONE} screenReaderOnly />
+      </I18nProvider>
     );
-    const heading = getByText(/charliechauri, software engineer/i);
 
-    expect(heading).toBeInTheDocument();
-    expect(heading.tagName).toBe('H1');
-    expect(heading.className).toContain('heading heading--sr-only');
+    const heading = screen.getByRole('heading', {
+      name: /charliechauri, software engineer/i,
+      level: 1,
+    });
+
+    expect(heading).toBeVisible();
+    expect(heading).toHaveAttribute('class', 'heading heading--sr-only');
   });
 });
