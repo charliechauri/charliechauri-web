@@ -4,7 +4,7 @@ import { useEllipsis } from './useEllipsis';
 describe('useEllipsis', () => {
   jest.useFakeTimers();
 
-  it('should have an initial value "."', () => {
+  it('has an initial value of "."', () => {
     testHook(() => {
       const ellipsis = useEllipsis();
 

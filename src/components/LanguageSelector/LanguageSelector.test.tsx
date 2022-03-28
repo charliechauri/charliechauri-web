@@ -1,30 +1,25 @@
 import React from 'react';
 import { I18nProvider } from 'test/providers';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import { LanguageSelector } from './index';
 
-describe('Heading', () => {
-  const renderComponent = () =>
+describe('LanguageSelector', () => {
+  it('renders and updates based on user\'s selection', async () => {
     render(
       <I18nProvider>
         <LanguageSelector />
       </I18nProvider>
     );
 
-  it('should render when valid locKey is set', async () => {
-    const { getByLabelText, getByText } = renderComponent();
-    const languageSelector = getByLabelText(
-      /Select an option to change language/i
-    ) as HTMLSelectElement;
-    const defaultOption = getByText(/English/i);
+    const languageSelector = screen.getByRole('combobox', {
+      name: /Select an option to change language/i,
+    });
 
-    expect(defaultOption).toBeVisible();
-    expect(languageSelector).toBeInTheDocument();
-    expect(languageSelector.value).toBe('en');
+    expect(languageSelector).toBeVisible();
+    expect(languageSelector).toHaveValue('en');
 
     fireEvent.change(languageSelector, { target: { value: 'es' } });
 
-    expect(getByText(/Español/i)).toBeVisible();
-    expect(languageSelector.value).toBe('es');
+    expect(languageSelector).toHaveValue('es');
   });
 });

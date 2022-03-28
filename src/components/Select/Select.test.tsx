@@ -1,24 +1,24 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import { Select } from './index';
 
-describe('renders learn react link', () => {
-  const options = [
-    {
-      value: 'first',
-      displayValue: '1st',
-    },
-    {
-      value: 'second',
-      displayValue: '2nd',
-    },
-    {
-      value: 'third',
-      displayValue: '3rd',
-    },
-  ];
+const options = [
+  {
+    value: 'first',
+    displayValue: '1st',
+  },
+  {
+    value: 'second',
+    displayValue: '2nd',
+  },
+  {
+    value: 'third',
+    displayValue: '3rd',
+  },
+];
 
-  const renderComponent = () =>
+describe('renders learn react link', () => {    
+  it('renders and change value based on user selection', () => {
     render(
       <Select
         ariaLabel="some description"
@@ -28,23 +28,15 @@ describe('renders learn react link', () => {
       />
     );
 
-  it('should render and change between options', () => {
-    const { getByLabelText, getByText } = renderComponent();
-    const select = getByLabelText(/some description/i) as HTMLSelectElement;
-    const firstOption = getByText('1st');
-
+    const select = screen.getByLabelText(/some description/i);
+  
     expect(select).toBeInTheDocument();
-    expect(select.value).toBe('first');
-    expect(firstOption).toBeInTheDocument();
+    expect(select).toHaveValue('first');
 
     fireEvent.change(select, { target: { value: 'second' } });
-    const secondOption = getByText('2nd');
-    expect(secondOption).toBeInTheDocument();
-    expect(select.value).toBe('second');
+    expect(select).toHaveValue('second');
 
     fireEvent.change(select, { target: { value: 'third' } });
-    const thirdOption = getByText('3rd');
-    expect(thirdOption).toBeInTheDocument();
-    expect(select.value).toBe('third');
+    expect(select).toHaveValue('third');
   });
 });

@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import { Logo } from './index';
 
 describe('Logo', () => {
-  it('should render', () => {
+  it('renders', () => {
     render(
       <I18nProvider>
         <Logo href="https://www.linkedin.com/in/carlosechauri" />
