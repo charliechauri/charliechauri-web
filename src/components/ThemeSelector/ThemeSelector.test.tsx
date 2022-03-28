@@ -1,10 +1,10 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import { ThemeProvider, I18nProvider } from 'test/providers';
 import { ThemeSelector } from './index';
 
 describe('ThemeSelector', () => {
-  const renderComponent = () =>
+  it('renders and update theme based on user selection', () => {
     render(
       <I18nProvider>
         <ThemeProvider>
@@ -12,21 +12,12 @@ describe('ThemeSelector', () => {
         </ThemeProvider>
       </I18nProvider>
     );
+    const themeSelector = screen.getByLabelText(/Select a theme/i);
 
-  it('should render and change between available themes', () => {
-    const { getByLabelText, getByText } = renderComponent();
-    const themeSelector = getByLabelText(
-      /Select a theme/i
-    ) as HTMLSelectElement;
-    const lightThemeOption = getByText('Light') as HTMLOptionElement;
-
-    expect(themeSelector).toBeInTheDocument();
-    expect(themeSelector.value).toBe('light');
-    expect(lightThemeOption).toBeInTheDocument();
+    expect(themeSelector).toBeVisible();
+    expect(themeSelector).toHaveValue('light');
 
     fireEvent.change(themeSelector, { target: { value: 'dark' } });
-    const darkThemeOption = getByText('Dark');
-    expect(darkThemeOption).toBeInTheDocument();
-    expect(themeSelector.value).toBe('dark');
+    expect(themeSelector).toHaveValue('dark');
   });
 });
