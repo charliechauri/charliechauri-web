@@ -12,6 +12,7 @@ describe('Heading', () => {
     );
     const heading = screen.getByRole('heading', {
       name: /charliechauri, software engineer/i,
+      // @ts-expect-error The installed Testing Library types omit heading level.
       level: 1,
     });
 
@@ -29,6 +30,7 @@ describe('Heading', () => {
 
     const heading = screen.getByRole('heading', {
       name: /charliechauri, software engineer/i,
+      // @ts-expect-error The installed Testing Library types omit heading level.
       level: 2,
     });
 
@@ -45,6 +47,7 @@ describe('Heading', () => {
 
     const heading = screen.getByRole('heading', {
       name: /charliechauri, software engineer/i,
+      // @ts-expect-error The installed Testing Library types omit heading level.
       level: 3,
     });
 
@@ -61,6 +64,7 @@ describe('Heading', () => {
 
     const heading = screen.getByRole('heading', {
       name: /charliechauri, software engineer/i,
+      // @ts-expect-error The installed Testing Library types omit heading level.
       level: 1,
     });
 

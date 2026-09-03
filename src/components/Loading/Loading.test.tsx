@@ -2,10 +2,11 @@ import React from 'react';
 import { I18nProvider } from 'test/providers';
 import { render, screen } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
+import { vi } from 'vitest';
 import { Loading } from './index';
 
 describe('Loading', () => {
-  jest.useFakeTimers();
+  vi.useFakeTimers();
 
   it('renders', async () => {
     render(
@@ -20,16 +21,16 @@ describe('Loading', () => {
     expect(loadingContent).toHaveTextContent('Loading .');
 
     act(() => {
-      jest.runOnlyPendingTimers();
+      vi.runOnlyPendingTimers();
     });
 
-    expect(setTimeout).toHaveBeenCalledTimes(4);
+    expect(vi.getTimerCount()).toBe(1);
     expect(loadingContent).toHaveTextContent('Loading ..');
 
     act(() => {
-      jest.runOnlyPendingTimers();
+      vi.runOnlyPendingTimers();
     });
 
-    expect(setTimeout).toHaveBeenCalledTimes(6);
+    expect(vi.getTimerCount()).toBe(1);
   });
 });

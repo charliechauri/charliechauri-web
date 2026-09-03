@@ -1,11 +1,12 @@
 import React from 'react';
 import { I18nProvider } from 'test/providers';
 import { fireEvent, render, screen } from '@testing-library/react';
+import { vi } from 'vitest';
 import { GlobalSelectors } from './index';
 
 describe('GlobalSelectors', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('renders', () => {
