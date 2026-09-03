@@ -9,6 +9,8 @@ describe('blog posts', () => {
       publishedDate: '2026-09-02',
       slug: '2026-09-02-starting-this-blog',
     });
+    expect(posts[0].contents).toContain('<h2>What to expect</h2>');
+    expect(posts[0].contents).toContain('<h3>More soon</h3>');
   });
 
   it('finds a post by slug', () => {

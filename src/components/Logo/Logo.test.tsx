@@ -15,4 +15,15 @@ describe('Logo', () => {
       screen.getByRole('img', { name: /charliechauri's logo/i })
     ).toBeVisible();
   });
+
+  it('supports internal links', () => {
+    render(
+      <I18nProvider>
+        <Logo href="/" target="_self" />
+      </I18nProvider>
+    );
+
+    expect(screen.getByRole('link')).toHaveAttribute('target', '_self');
+    expect(screen.getByRole('link')).not.toHaveAttribute('rel');
+  });
 });

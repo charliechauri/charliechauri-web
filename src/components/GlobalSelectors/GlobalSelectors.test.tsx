@@ -68,4 +68,19 @@ describe('GlobalSelectors', () => {
 
     expect(themeSelector).toHaveValue('dark');
   });
+
+  it('can hide the language selector', () => {
+    render(
+      <I18nProvider>
+        <GlobalSelectors showLanguage={false} />
+      </I18nProvider>
+    );
+
+    expect(
+      screen.queryByRole('combobox', {
+        name: 'Select an option to change language',
+      })
+    ).not.toBeInTheDocument();
+    expect(screen.getByRole('combobox', { name: 'Select a theme' })).toBeVisible();
+  });
 });
