@@ -1,0 +1,75 @@
+@import 'scss/palette';
+@import 'scss/variables';
+
+.blog {
+  max-width: 720px;
+  text-align: left;
+  width: 100%;
+
+  &__header {
+    align-items: center;
+    display: flex;
+    gap: $base-size;
+    margin-bottom: $base-size;
+  }
+
+  &__logo {
+    flex: 0 0 auto;
+
+    .logo__img {
+      width: 180px;
+    }
+  }
+
+  &__header h1 {
+    margin-bottom: 0;
+  }
+
+  h1 {
+    margin-bottom: $base-size;
+  }
+
+  &__intro,
+  &__metadata {
+    margin-bottom: $base-size * 2;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    border-bottom: 1px solid $color-dark-blue;
+    padding: $base-size 0;
+
+    time,
+    p {
+      display: block;
+      font-size: 0.75em;
+      margin-top: $base-size / 2;
+    }
+  }
+
+  &__link,
+  &__back {
+    color: $color-dark-purple;
+    text-decoration: underline;
+  }
+
+  &__back {
+    display: inline-block;
+    margin-bottom: $base-size * 2;
+    margin-top: $base-size * 2;
+  }
+
+  &__contents {
+    line-height: 1.6;
+
+    h2,
+    h3 {
+      margin-top: $base-size * 2;
+    }
+  }
+}

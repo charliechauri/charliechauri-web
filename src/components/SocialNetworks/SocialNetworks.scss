@@ -1,4 +1,5 @@
 @import 'scss/variables';
+@import 'scss/palette';
 
 .social-networks {
   &__list {
@@ -11,4 +12,13 @@
       margin-right: $base-size;
     }
   }
+
+  &__blog-link {
+    color: $color-dark-purple;
+    text-decoration: underline;
+  }
+}
+
+.app--dark .social-networks__blog-link {
+  color: $color-light-fuchsia;
 }

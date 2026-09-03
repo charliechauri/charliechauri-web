@@ -13,6 +13,7 @@ describe('SocialNetworks', () => {
     );
 
     const heading = screen.getByText('Follow me');
+    const blogLink = screen.getByText('blog');
     const githubLink = screen.getByText('github');
     const linkedinLink = screen.getByText('linkedin');
     const twitterLink = screen.getByText('twitter');
@@ -20,6 +21,7 @@ describe('SocialNetworks', () => {
     const links = [githubLink, linkedinLink, twitterLink, instagramLink];
 
     expect(heading.tagName).toBe('H2');
+    expect(blogLink).toHaveAttribute('href', '/blog');
     expect(githubLink).toHaveAttribute(
       'href',
       'https://github.com/charliechauri/'

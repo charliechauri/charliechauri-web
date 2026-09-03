@@ -14,9 +14,15 @@ const logos: Record<'light' | 'dark', string> = {
 
 export type LogoProps = {
   href: string;
+  target?: React.HTMLAttributeAnchorTarget;
+  className?: string;
 };
 
-export const Logo: FC<LogoProps> = ({ href }) => {
+export const Logo: FC<LogoProps> = ({
+  href,
+  target = '_blank',
+  className = '',
+}) => {
   const { t } = useTranslation();
 
   return (
@@ -25,9 +31,9 @@ export const Logo: FC<LogoProps> = ({ href }) => {
         return (
           <a
             href={href}
-            className="logo"
-            target="_blank"
-            rel="noopener noreferrer"
+            className={`logo ${className}`}
+            target={target}
+            rel={target === '_blank' ? 'noopener noreferrer' : undefined}
           >
             <img
               src={logos[theme]}

@@ -43,6 +43,12 @@ threshold.
 
 Builds the production app into `build/` for Netlify deployment.
 
+## Blog
+
+The blog is available at `/blog`. Add posts as Markdown files in
+`src/content/blog/` with `title`, `author`, and `publishedDate` frontmatter.
+Routes use the `YYYY-MM-DD-title` slug format.
+
 ### `yarn analyze`
 
 Analyzes the generated JavaScript source maps.
