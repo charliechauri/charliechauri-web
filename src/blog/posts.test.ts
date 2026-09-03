@@ -5,7 +5,7 @@ describe('blog posts', () => {
     expect(posts).toHaveLength(1);
     expect(posts[0]).toMatchObject({
       title: 'Starting this blog',
-      author: 'Charlie Chauri',
+      author: 'Charli Echauri',
       publishedDate: '2026-09-02',
       slug: '2026-09-02-starting-this-blog',
     });
