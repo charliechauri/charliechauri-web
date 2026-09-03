@@ -1,4 +1,5 @@
 import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import { I18nProvider } from 'test/providers';
 
@@ -7,12 +8,15 @@ import { SocialNetworks } from './index';
 describe('SocialNetworks', () => {
   it('renders title and list of social networks', () => {
     render(
-      <I18nProvider>
-        <SocialNetworks />
-      </I18nProvider>
+      <MemoryRouter>
+        <I18nProvider>
+          <SocialNetworks />
+        </I18nProvider>
+      </MemoryRouter>
     );
 
     const heading = screen.getByText('Follow me');
+    const blogLink = screen.getByText('blog');
     const githubLink = screen.getByText('github');
     const linkedinLink = screen.getByText('linkedin');
     const twitterLink = screen.getByText('twitter');
@@ -20,6 +24,7 @@ describe('SocialNetworks', () => {
     const links = [githubLink, linkedinLink, twitterLink, instagramLink];
 
     expect(heading.tagName).toBe('H2');
+    expect(blogLink).toHaveAttribute('href', '/blog');
     expect(githubLink).toHaveAttribute(
       'href',
       'https://github.com/charliechauri/'

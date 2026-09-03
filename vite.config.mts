@@ -10,6 +10,7 @@ export default defineConfig({
     alias: {
       src: path.resolve(import.meta.dirname, 'src'),
       components: path.resolve(import.meta.dirname, 'src/components'),
+      blog: path.resolve(import.meta.dirname, 'src/blog'),
       pages: path.resolve(import.meta.dirname, 'src/pages'),
       test: path.resolve(import.meta.dirname, 'src/test'),
       locales: path.resolve(import.meta.dirname, 'src/locales'),

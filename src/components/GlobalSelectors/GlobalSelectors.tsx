@@ -5,12 +5,16 @@ import { ThemeSelector } from 'components/ThemeSelector';
 
 import './GlobalSelectors.scss';
 
-export type GlobalSelectorsProps = {};
+export type GlobalSelectorsProps = {
+  showLanguage?: boolean;
+};
 
-export const GlobalSelectors: FC<GlobalSelectorsProps> = () => {
+export const GlobalSelectors: FC<GlobalSelectorsProps> = ({
+  showLanguage = true,
+}) => {
   return (
     <section className="global-selectors">
-      <LanguageSelector />
+      {showLanguage && <LanguageSelector />}
       <ThemeSelector />
     </section>
   );
