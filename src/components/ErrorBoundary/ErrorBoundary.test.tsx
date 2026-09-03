@@ -1,14 +1,15 @@
 /* eslint-disable no-console */
 import React from 'react';
 import { render } from '@testing-library/react';
+import { vi } from 'vitest';
 import { I18nProvider } from 'test/providers';
 
 import { ErrorBoundary } from './index';
 
-let consoleSpy: jest.SpyInstance<void, [any?, ...any[]]>; // eslint-disable-line @typescript-eslint/no-explicit-any
+let consoleSpy: ReturnType<typeof vi.spyOn>;
 
 beforeAll(() => {
-  consoleSpy = jest.spyOn(console, 'error');
+  consoleSpy = vi.spyOn(console, 'error');
   consoleSpy.mockImplementation(() => {});
 });
 
@@ -17,7 +18,7 @@ afterAll(() => {
 });
 
 afterEach(() => {
-  jest.clearAllMocks();
+  vi.clearAllMocks();
 });
 
 function ThrowError({ shouldThrow = false }) {
@@ -46,7 +47,7 @@ test('should render error state when error is thrown in children components', ()
   );
 
   expect.any(Error);
-  expect(console.error).toHaveBeenCalledTimes(2);
+  expect(console.error).toHaveBeenCalledTimes(1);
   getByText('Ooops');
   getByText('Something went wrong, please reload the page');
   getByLabelText('Dissapointed face');

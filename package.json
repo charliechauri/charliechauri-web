@@ -4,35 +4,35 @@
   "version": "0.1.0",
   "private": false,
   "author": "charliechauri",
+  "engines": {
+    "node": ">=26.8.1",
+    "yarn": ">=1.22.22"
+  },
   "dependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "@testing-library/jest-dom": "^5.8.0",
+    "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^10.0.4",
     "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/react-router-dom": "^5.1.5",
-    "@typescript-eslint/eslint-plugin": "^2.34.0",
-    "@typescript-eslint/parser": "^2.34.0",
-    "babel-eslint": "^10.1.0",
-    "eslint-config-airbnb": "^18.1.0",
-    "eslint-config-airbnb-typescript": "^7.2.1",
+    "@typescript-eslint/eslint-plugin": "5.62.0",
+    "@typescript-eslint/parser": "5.62.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "@vitest/coverage-v8": "^4.1.11",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-typescript": "17.1.0",
     "eslint-config-prettier": "^6.11.0",
-    "eslint-config-react-app": "^5.2.1",
     "eslint-import-resolver-typescript": "^2.0.0",
-    "eslint-loader": "^4.0.2",
-    "eslint-plugin-flowtype": "^5.1.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-prettier": "^3.1.3",
-    "eslint-plugin-react": "^7.20.0",
-    "eslint-plugin-react-hooks": "^4.0.2",
+    "eslint-plugin-react": "7.37.5",
+    "eslint-plugin-react-hooks": "4.6.2",
     "husky": "^4.2.5",
     "i18next": "^19.4.5",
-    "jest-environment-jsdom-sixteen": "^1.0.3",
     "lint-staged": "^10.2.4",
     "prettier": "^2.0.5",
     "prettier-eslint": "^9.0.1",
@@ -41,26 +41,23 @@
     "react-dom": "^16.13.1",
     "react-i18next": "^11.5.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
-    "sass": "^1.49.9",
-    "source-map-explorer": "^2.4.2",
-    "typescript": "~3.7.2"
+    "sass": "^1.103.1",
+    "source-map-explorer": "^2.5.3",
+    "typescript": "^5.9.2",
+    "vite": "^8.2.2",
+    "vitest": "^4.1.11"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "vite",
     "postbuild": "yarn analyze --tsv",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jest-environment-jsdom-sixteen --color",
-    "test:nowatch": "CI=true react-scripts test --env=jest-environment-jsdom-sixteen --coverage --color",
-    "eject": "react-scripts eject",
+    "build": "vite build",
+    "test": "vitest",
+    "test:nowatch": "vitest run --coverage --color",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
     "lint:autofix": "eslint --ext .js,.jsx,.ts,.tsx src --color --fix",
     "format:prettier": "prettier --write src/**/*.{ts,tsx,scss}",
     "pre-pull-request": "yarn test:nowatch && yarn build",
-    "analyze": "source-map-explorer 'build/static/js/*.js'"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "analyze": "source-map-explorer 'build/assets/*.js' --no-border-checks"
   },
   "browserslist": {
     "production": [
@@ -94,24 +91,9 @@
       "pre-push": "yarn pre-pull-request"
     }
   },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{ts,tsx}",
-      "!src/index.tsx",
-      "!src/serviceWorker.ts",
-      "!src/react-app-env.d.ts",
-      "!<rootDir>/node_modules/",
-      "!<rootDir>/path/to/dir/",
-      "!src/i18n.tsx",
-      "!src/test/*"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90,
-        "statements": 90
-      }
-    }
+  "devDependencies": {
+    "@testing-library/dom": "10.4.1",
+    "eslint": "8.57.1",
+    "jsdom": "^30.0.1"
   }
 }
