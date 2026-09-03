@@ -1,4 +1,5 @@
 import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import { I18nProvider } from 'test/providers';
 
@@ -7,9 +8,11 @@ import { SocialNetworks } from './index';
 describe('SocialNetworks', () => {
   it('renders title and list of social networks', () => {
     render(
-      <I18nProvider>
-        <SocialNetworks />
-      </I18nProvider>
+      <MemoryRouter>
+        <I18nProvider>
+          <SocialNetworks />
+        </I18nProvider>
+      </MemoryRouter>
     );
 
     const heading = screen.getByText('Follow me');
