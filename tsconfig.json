@@ -13,12 +13,22 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
-    "baseUrl": "src",
+    "paths": {
+      "src/*": ["./src/*"],
+      "components/*": ["./src/components/*"],
+      "blog/*": ["./src/blog/*"],
+      "pages/*": ["./src/pages/*"],
+      "test/*": ["./src/test/*"],
+      "locales/*": ["./src/locales/*"],
+      "img/*": ["./src/img/*"],
+      "ThemeContext": ["./src/ThemeContext.tsx"],
+      "i18n": ["./src/i18n.tsx"]
+    },
     "types": ["vite/client", "vitest/globals"]
   },
   "include": [

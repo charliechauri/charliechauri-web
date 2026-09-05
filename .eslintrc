@@ -14,20 +14,8 @@
   },
   "rules": {
     "object-curly-spacing": ["warn", "always"],
-    "no-unused-vars": [
-      "warn",
-      {
-        "vars": "all",
-        "args": "none"
-      }
-    ],
-    "@typescript-eslint/no-unused-vars": [
-      "warn",
-      {
-        "vars": "all",
-        "args": "none"
-      }
-    ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-explicit-any": [
       "error",
       {
@@ -47,6 +35,15 @@
       "error",
       {
         "allowForLoopAfterthoughts": true
+      }
+    ],
+    "indent": "off",
+    "@typescript-eslint/indent": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "trailingComma": "es5"
       }
     ],
     "react/jsx-key": "error",

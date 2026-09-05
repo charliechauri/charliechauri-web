@@ -17,7 +17,7 @@ const options = [
   },
 ];
 
-describe('renders learn react link', () => {    
+describe('renders learn react link', () => {
   it('renders and change value based on user selection', () => {
     render(
       <Select
@@ -29,7 +29,7 @@ describe('renders learn react link', () => {
     );
 
     const select = screen.getByLabelText(/some description/i);
-  
+
     expect(select).toBeInTheDocument();
     expect(select).toHaveValue('first');
 

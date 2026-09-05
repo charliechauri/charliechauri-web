@@ -81,6 +81,8 @@ describe('GlobalSelectors', () => {
         name: 'Select an option to change language',
       })
     ).not.toBeInTheDocument();
-    expect(screen.getByRole('combobox', { name: 'Select a theme' })).toBeVisible();
+    expect(
+      screen.getByRole('combobox', { name: 'Select a theme' })
+    ).toBeVisible();
   });
 });

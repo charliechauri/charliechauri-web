@@ -4,7 +4,7 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import { LanguageSelector } from './index';
 
 describe('LanguageSelector', () => {
-  it('renders and updates based on user\'s selection', async () => {
+  it("renders and updates based on user's selection", async () => {
     render(
       <I18nProvider>
         <LanguageSelector />
