@@ -4713,12 +4713,12 @@ __metadata:
   linkType: hard
 
 "lodash.template@npm:^4.0.2":
-  version: 4.5.0
-  resolution: "lodash.template@npm:4.5.0"
+  version: 4.18.1
+  resolution: "lodash.template@npm:4.18.1"
   dependencies:
     lodash._reinterpolate: "npm:^3.0.0"
     lodash.templatesettings: "npm:^4.0.0"
-  checksum: 10c0/62a02b397f72542fa9a989d9fc1a94fc1cb94ced8009fa5c37956746c0cf460279e844126c2abfbf7e235fe27e8b7ee8e6efbf6eac247a06aa05b05457fda817
+  checksum: 10c0/b63531cd665533f84960f3ef239b0aea96b4bdac6bc5e8c5d94bab4ba6ecbde5095cc8c8d65f765391273925321203047f2dc702471e8ccb40acf44ea10bda91
   languageName: node
   linkType: hard
 
@@ -6283,11 +6283,11 @@ __metadata:
   linkType: hard
 
 "semver@npm:2 || 3 || 4 || 5":
-  version: 5.7.1
-  resolution: "semver@npm:5.7.1"
+  version: 5.7.2
+  resolution: "semver@npm:5.7.2"
   bin:
-    semver: ./bin/semver
-  checksum: 10c0/d4884f2aeca28bff35d0bd40ff0a9b2dfc4b36a883bf0ea5dc15d10d9a01bdc9041035b05f825d4b5ac8a56e490703dbf0d986d054de82cc5e9bad3f02ca6e00
+    semver: bin/semver
+  checksum: 10c0/e4cf10f86f168db772ae95d86ba65b3fd6c5967c94d97c708ccb463b778c2ee53b914cd7167620950fc07faf5a564e6efe903836639e512a1aa15fbc9667fa25
   languageName: node
   linkType: hard
 
