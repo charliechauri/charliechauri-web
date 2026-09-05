@@ -1,8 +1,8 @@
-@import 'scss/variables';
-@import 'scss/reset';
-@import 'scss/palette';
-@import 'scss/typography';
-@import 'scss/utility';
+@use './scss/variables' as *;
+@use './scss/reset';
+@use './scss/palette' as *;
+@use './scss/typography' as *;
+@use './scss/utility' as *;
 
 body {
   background-color: $color-light-yellow;

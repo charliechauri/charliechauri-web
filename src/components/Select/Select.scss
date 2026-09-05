@@ -1,6 +1,6 @@
-@import 'scss/variables';
-@import 'scss/typography';
-@import 'scss/palette';
+@use '../../scss/variables' as *;
+@use '../../scss/typography' as *;
+@use '../../scss/palette' as *;
 
 .select {
   appearance: none;
