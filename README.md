@@ -16,7 +16,10 @@ builds and [Vitest](https://vitest.dev/) with React Testing Library for tests.
 1. Run `nvm use` to set the Node version.
 2. Run `yarn` to install dependencies.
 
-## Available Scripts
+## Available scripts
+
+<details>
+<summary>List</summary>
 
 ### `yarn start`
 
@@ -43,15 +46,18 @@ threshold.
 
 Builds the production app into `build/` for Netlify deployment.
 
+### `yarn analyze`
+
+Analyzes the generated JavaScript source maps.
+
+</details>
+
+
 ## Blog
 
 The blog is available at `/blog`. Add posts as Markdown files in
 `src/content/blog/` with `title`, `author`, and `publishedDate` frontmatter.
 Routes use the `YYYY-MM-DD-title` slug format.
-
-### `yarn analyze`
-
-Analyzes the generated JavaScript source maps.
 
 ## Git hooks
 
