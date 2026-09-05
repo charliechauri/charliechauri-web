@@ -1,5 +1,5 @@
-@import 'scss/variables';
-@import 'scss/palette';
+@use '../../scss/variables' as *;
+@use '../../scss/palette' as *;
 
 .social-networks {
   &__list {

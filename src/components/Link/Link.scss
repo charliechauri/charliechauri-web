@@ -1,4 +1,4 @@
-@import 'scss/palette';
+@use '../../scss/palette' as *;
 
 a.link {
   color: $color-dark-purple;

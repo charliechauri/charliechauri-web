@@ -1,11 +1,12 @@
-@import 'scss/utility';
-@import 'scss/variables';
+@use 'sass:math';
+@use '../../scss/utility' as *;
+@use '../../scss/variables' as *;
 
 @mixin heading($font-size, $text-transform) {
   &.heading {
     font-family: 'Pixeled';
     font-size: $font-size;
-    margin-bottom: $font-size / 2;
+    margin-bottom: math.div($font-size, 2);
     text-transform: $text-transform;
 
     &--sr-only {

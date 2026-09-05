@@ -1,4 +1,4 @@
-@import 'scss/variables';
+@use '../../scss/variables' as *;
 
 .description {
   margin-bottom: $base-size * 1.5;

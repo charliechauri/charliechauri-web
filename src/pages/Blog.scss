@@ -1,5 +1,6 @@
-@import 'scss/palette';
-@import 'scss/variables';
+@use 'sass:math';
+@use '../scss/palette' as *;
+@use '../scss/variables' as *;
 
 .blog {
   max-width: 720px;
@@ -48,7 +49,7 @@
     p {
       display: block;
       font-size: 0.75em;
-      margin-top: $base-size / 2;
+      margin-top: math.div($base-size, 2);
     }
   }
 
