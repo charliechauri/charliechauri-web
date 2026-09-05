@@ -14,10 +14,9 @@ describe('Blog', () => {
     );
 
     expect(screen.getByRole('heading', { name: 'Blog' })).toBeVisible();
-    expect(screen.getByRole('link', { name: 'Starting this blog' })).toHaveAttribute(
-      'href',
-      '/blog/2026-09-02-starting-this-blog'
-    );
+    expect(
+      screen.getByRole('link', { name: 'Starting this blog' })
+    ).toHaveAttribute('href', '/blog/2026-09-02-starting-this-blog');
   });
 
   it('renders a post and handles unknown slugs', () => {
@@ -42,6 +41,8 @@ describe('Blog', () => {
         </Route>
       </MemoryRouter>
     );
-    expect(screen.getByRole('heading', { name: 'Post not found' })).toBeVisible();
+    expect(
+      screen.getByRole('heading', { name: 'Post not found' })
+    ).toBeVisible();
   });
 });

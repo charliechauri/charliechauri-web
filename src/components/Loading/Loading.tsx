@@ -13,7 +13,11 @@ export const Loading: FC<LoadingProps> = () => {
 
   return (
     <section className="loading">
-      <div className="loading__content" data-testid="loading-content" role="presentation">
+      <div
+        className="loading__content"
+        data-testid="loading-content"
+        role="presentation"
+      >
         {t('loading')} {ellipsis}
       </div>
     </section>

@@ -42,12 +42,12 @@ const toPost = (source: string): BlogPost => {
   }
 
   const [, frontmatter, content] = match;
-  const metadata = Object.fromEntries(
+  const metadata = (Object.fromEntries(
     frontmatter.split('\n').map((line) => {
       const [key, ...value] = line.split(':');
       return [key, value.join(':').trim()];
     })
-  ) as unknown as PostFrontmatter;
+  ) as unknown) as PostFrontmatter;
 
   return {
     ...metadata,

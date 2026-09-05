@@ -1,17 +1,17 @@
 # This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 
 name: PR checks
-on: 
-  push:
-    branches-ignore: [main]
+on:
+  pull_request:
+
 jobs:
   build:
     name: PR Checks
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout master
-        uses: actions/checkout@master
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Read Node.js version from .nvmrc
         id: from_nvmrc
@@ -22,13 +22,27 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ steps.from_nvmrc.outputs.node_version }}
-          cache: yarn
 
-      - name: Print Node.js version ${{ steps.from_nvmrc.outputs.node_version }}
-        run: node -v
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Cache Yarn dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            .yarn/cache
+            .yarn/install-state.gz
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Print Node.js and Yarn versions
+        run: |
+          node -v
+          yarn --version
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
       - name: Run linter
         run: yarn lint
